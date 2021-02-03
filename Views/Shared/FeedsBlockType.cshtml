@@ -3,10 +3,11 @@
 
 @model EpiserverSite_CompanyIntranet.Models.Blocks.FeedsBlockType
 
-    <div>
+<div>
 
-        <h2>@Html.PropertyFor(x => x.Heading)</h2>
+    <h2>@Html.PropertyFor(x => x.Heading)</h2>
 
-        @Html.PropertyFor(x => x.Image1, new { CssClass = "image" })
+    @Html.PropertyFor(x => x.Image1, new { CssClass = "image" })
+    <h2>@Html.PropertyFor(x => x.Video)</h2>
 
-    </div>
+</div>
