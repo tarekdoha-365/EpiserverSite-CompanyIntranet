@@ -3,12 +3,6 @@
 @using EPiServer.Web.Mvc.Html
 @model EpiserverSite_CompanyIntranet.Models.Pages.StartPageType
 @using EpiserverSite_CompanyIntranet.Infrastructure.Helpers
-<h2>@Html.PropertyFor(x => x.Title)</h2>
-<p>@Html.PropertyFor(x => x.Name)</p>
-<p>@Html.PropertyFor(x => x.MainBody)</p>
-<p>@Html.PropertyFor(x => x.LinkList)</p>
-<p>@Html.PropertyFor(x => x.ContentArea)</p>
-
 @helper MenuItemTemplate(HtmlHelpers.MenuItem item)
 {
     <li>
@@ -27,3 +21,8 @@
     </ul>
 </nav>
 
+<h2>@Html.PropertyFor(x => x.Title)</h2>
+<p>@Html.PropertyFor(x => x.Name)</p>
+<p>@Html.PropertyFor(x => x.MainBody)</p>
+<p>@Html.PropertyFor(x => x.LinkList)</p>
+<p>@Html.PropertyFor(x => x.ContentArea)</p>
