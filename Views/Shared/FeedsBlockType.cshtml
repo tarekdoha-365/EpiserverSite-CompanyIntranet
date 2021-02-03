@@ -1,0 +1,12 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+
+@model EpiserverSite_CompanyIntranet.Models.Blocks.FeedsBlockType
+
+    <div>
+
+        <h2>@Html.PropertyFor(x => x.Heading)</h2>
+
+        @Html.PropertyFor(x => x.Image1, new { CssClass = "image" })
+
+    </div>

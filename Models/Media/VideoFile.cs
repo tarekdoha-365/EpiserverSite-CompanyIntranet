@@ -1,6 +1,7 @@
 ﻿using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
+using EPiServer.Framework.DataAnnotations;
 using EPiServer.Web;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -8,7 +9,7 @@ using System.ComponentModel.DataAnnotations;
 namespace EpiserverSite_CompanyIntranet.Infrastructure.Models.Media
 {
     [ContentType(DisplayName = "VideoFile", GUID = "b93891e6-66bb-46ba-ae83-59f28d0c3429", Description = "")]
-    /*[MediaDescriptor(ExtensionString = "flv,mp4,webm")]*/
+    [MediaDescriptor(ExtensionString = "flv,mp4,webm")]
     public class VideoFile : MediaData
     {
         [CultureSpecific]

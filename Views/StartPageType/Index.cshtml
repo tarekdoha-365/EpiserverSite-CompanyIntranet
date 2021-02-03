@@ -1,15 +1,29 @@
-﻿@model EpiserverSite_CompanyIntranet.Models.Pages.StartPageType
+﻿@using EPiServer.Core
+@using EPiServer.Web
+@using EPiServer.Web.Mvc.Html
+@model EpiserverSite_CompanyIntranet.Models.Pages.StartPageType
+@using EpiserverSite_CompanyIntranet.Infrastructure.Helpers
+<h2>@Html.PropertyFor(x => x.Title)</h2>
+<p>@Html.PropertyFor(x => x.Name)</p>
+<p>@Html.PropertyFor(x => x.MainBody)</p>
+<p>@Html.PropertyFor(x => x.LinkList)</p>
+<p>@Html.PropertyFor(x => x.ContentArea)</p>
 
-<!DOCTYPE html>
+@helper MenuItemTemplate(HtmlHelpers.MenuItem item)
+{
+    <li>
+        @Html.PageLink(item.Page)
+        @if (item.HasChildren.Value)
+        {
+            <ul>
+                @Html.MenuList(item.Page.ContentLink, MenuItemTemplate)
+            </ul>
+        }
+    </li>
+}
+<nav>
+    <ul>
+        @Html.MenuList(SiteDefinition.Current.StartPage, MenuItemTemplate)
+    </ul>
+</nav>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div>
-        Start Page
-    </div>
-</body>
-</html>
