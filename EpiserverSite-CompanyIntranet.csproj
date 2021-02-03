@@ -291,6 +291,7 @@
     <Content Include="Views\Shared\FeedsBlockType.cshtml" />
     <Content Include="Views\AboutPageType\Index.cshtml" />
     <Content Include="Views\PortalsPageType\Index.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
