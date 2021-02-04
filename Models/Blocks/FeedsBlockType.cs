@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 namespace EpiserverSite_CompanyIntranet.Models.Blocks
 {
     [ContentType(DisplayName = "FeedsBlockType", GUID = "92b5c0a9-3e8e-4e86-9ce2-6e64d6343614", Description = "")]
+    [ImageUrl("~/Content/Icon/jumbotronblocktype.jpg")]
     public class FeedsBlockType : BlockData
     {
         [Display(
