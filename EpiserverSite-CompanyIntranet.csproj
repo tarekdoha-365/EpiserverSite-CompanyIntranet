@@ -54,6 +54,12 @@
     <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
+    <Reference Include="ClosedXML, Version=0.76.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>packages\ClosedXML.0.76.0\lib\net40-client\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -122,6 +128,9 @@
     </Reference>
     <Reference Include="EPiServer.Web.WebControls, Version=11.15.1.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
       <HintPath>packages\EPiServer.CMS.AspNet.11.15.1\lib\net461\EPiServer.Web.WebControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <HintPath>packages\DotNetZip.1.9.1.8\lib\net20\Ionic.Zip.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
@@ -232,6 +241,8 @@
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ItemGroup>
+    <Compile Include="Backup\BackupDatabaseValidator.cs" />
+    <Compile Include="Backup\LocalDBDatabaseValidator.cs" />
     <Compile Include="Business\ContentExtensions.cs" />
     <Compile Include="Business\SiteTabNames.cs" />
     <Compile Include="Business\StructureMapDependencyResolver.cs" />
@@ -239,6 +250,7 @@
     <Compile Include="Controllers\AboutPageTypeController.cs" />
     <Compile Include="Controllers\ArticlePageTypeController.cs" />
     <Compile Include="Controllers\BlogPageTypeController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\PortalsPageTypeController.cs" />
     <Compile Include="Controllers\StandardPageTypeController.cs" />
     <Compile Include="Controllers\StartPageTypeController.cs" />
@@ -251,7 +263,10 @@
     <Compile Include="Infrastructure\Services\SiteValidationService.cs" />
     <Compile Include="Infrastructure\Validators\ContentPageValidator.cs" />
     <Compile Include="Infrastructure\Validators\StartPageValidator.cs" />
+    <Compile Include="Interface\IComment.cs" />
     <Compile Include="Models\Blocks\FeedsBlockType.cs" />
+    <Compile Include="Models\DDStoreRepository.cs" />
+    <Compile Include="Models\Entities\Comment.cs" />
     <Compile Include="Models\Media\GenericMedia.cs" />
     <Compile Include="Models\Media\ImageFile.cs" />
     <Compile Include="Models\Media\VideoFile.cs" />
@@ -262,8 +277,8 @@
     <Compile Include="Models\Pages\SitePageData.cs" />
     <Compile Include="Models\Pages\StandardPageType.cs" />
     <Compile Include="Models\Pages\StartPageType.cs" />
-    <Compile Include="Models\ViewModels\PageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\StartDetailsComment.cs" />
     <Compile Include="Views\Shared\Blocks\FeedsBlockTypeTemplate.ascx.cs">
       <DependentUpon>FeedsBlockTypeTemplate.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -273,8 +288,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Models\Properties\" />
     <Folder Include="Static\" />
+    <Folder Include="Views\Employee\" />
     <Folder Include="Views\Shared\Pages\" />
   </ItemGroup>
   <ItemGroup>
@@ -300,6 +317,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\BlogPageType\Index.cshtml" />
     <Content Include="Views\ArticlePage\Index.cshtml" />
+    <Content Include="Views\StartPageType\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
