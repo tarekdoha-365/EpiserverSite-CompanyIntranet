@@ -1,12 +1,12 @@
 ﻿using EPiServer.Validation;
-using EpiserverSite_CompanyIntranet.Infrastructure.Interfaces;
+using EpiserverSite_CompanyIntranet.Interfaces;
 using EpiserverSite_CompanyIntranet.Models.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace EpiserverSite_CompanyIntranet.Infrastructure.Validators
+namespace EpiserverSite_CompanyIntranet.Validators
 {
     //public class StartPageValidator : IValidate<StartPageType>
     //{

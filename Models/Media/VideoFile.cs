@@ -6,7 +6,7 @@ using EPiServer.Web;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace EpiserverSite_CompanyIntranet.Infrastructure.Models.Media
+namespace EpiserverSite_CompanyIntranet.Models.Media
 {
     [ContentType(DisplayName = "VideoFile", GUID = "b93891e6-66bb-46ba-ae83-59f28d0c3429", Description = "")]
     [MediaDescriptor(ExtensionString = "flv,mp4,webm")]

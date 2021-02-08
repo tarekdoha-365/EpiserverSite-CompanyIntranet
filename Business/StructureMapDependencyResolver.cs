@@ -1,13 +1,12 @@
-﻿using System;
+﻿using StructureMap;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web.Http.Dependencies;
 using System.Web.Mvc;
-using StructureMap;
 
 namespace EpiserverSite_CompanyIntranet.Business
 {
-    public class StructureMapDependencyResolver : System.Web.Http.Dependencies.IDependencyResolver
+    public class StructureMapDependencyResolver : IDependencyResolver, System.Web.Http.Dependencies.IDependencyResolver
     {
         readonly IContainer _container;
         public StructureMapDependencyResolver(IContainer container)
@@ -41,7 +40,7 @@ namespace EpiserverSite_CompanyIntranet.Business
         {
             return _container.GetAllInstances(serviceType).Cast<object>();
         }
-        public IDependencyScope BeginScope()
+        public System.Web.Http.Dependencies.IDependencyScope BeginScope()
         {
             var childContainer = _container.GetNestedContainer();
             return new StructureMapScope(childContainer);

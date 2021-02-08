@@ -13,7 +13,7 @@ using EPiServer.Web.Mvc.Html;
 using EPiServer.Web.Routing;
 using EPiServer;
 
-namespace EpiserverSite_CompanyIntranet.Infrastructure.Helpers
+namespace EpiserverSite_CompanyIntranet.Helpers
 {
     public static class HtmlHelpers
     { /// <summary>

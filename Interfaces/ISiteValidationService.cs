@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using EPiServer.Validation;
 using EpiserverSite_CompanyIntranet.Models.Pages;
 
-namespace EpiserverSite_CompanyIntranet.Infrastructure.Interfaces
+namespace EpiserverSite_CompanyIntranet.Interfaces
 {
    public interface ISiteValidationService
     {
