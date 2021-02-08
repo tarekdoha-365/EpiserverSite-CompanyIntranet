@@ -253,6 +253,7 @@
     <Compile Include="Controllers\BlogPageTypeController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\PortalsPageTypeController.cs" />
+    <Compile Include="Controllers\SearchPageTypeController.cs" />
     <Compile Include="Controllers\StandardPageTypeController.cs" />
     <Compile Include="Controllers\StartPageTypeController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
@@ -325,6 +326,7 @@
     <Content Include="Views\BlogPageType\Index.cshtml" />
     <Content Include="Views\ArticlePage\Index.cshtml" />
     <Content Include="Views\StartPageType\Details.cshtml" />
+    <Content Include="Views\SearchPageType\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
