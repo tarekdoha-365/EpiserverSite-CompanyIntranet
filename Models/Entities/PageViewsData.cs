@@ -7,12 +7,14 @@ using System.Web;
 
 namespace EpiserverSite_CompanyIntranet.Models.Entities
 {
-    public class Comment : IDynamicData
+    [EPiServerDataStore(AutomaticallyCreateStore = true, AutomaticallyRemapStore = true)]
+    public class PageViewsData
     {
         public Identity Id { get; set; }
-        public DateTime Time { get; set; }
-        public int PageID { get; set; }
-        public string Username { get; set; }
-        public string Text { get; set; }
+
+        [EPiServerDataIndex]
+        public int PageId { get; set; }
+
+        public int ViewsAmount { get; set; }
     }
 }

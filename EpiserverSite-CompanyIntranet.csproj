@@ -243,6 +243,7 @@
   <ItemGroup>
     <Compile Include="Backup\BackupDatabaseValidator.cs" />
     <Compile Include="Backup\LocalDBDatabaseValidator.cs" />
+    <Compile Include="Business\CacheManager.cs" />
     <Compile Include="Business\ContentExtensions.cs" />
     <Compile Include="Business\SiteTabNames.cs" />
     <Compile Include="Business\StructureMapDependencyResolver.cs" />
@@ -254,19 +255,25 @@
     <Compile Include="Controllers\PortalsPageTypeController.cs" />
     <Compile Include="Controllers\StandardPageTypeController.cs" />
     <Compile Include="Controllers\StartPageTypeController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\Helpers\HtmlHelpers.cs" />
-    <Compile Include="Infrastructure\Initialization\DependencyResolverInitialization.cs" />
-    <Compile Include="Infrastructure\Interfaces\ISiteValidationService.cs" />
-    <Compile Include="Infrastructure\Services\SiteValidationService.cs" />
-    <Compile Include="Infrastructure\Validators\ContentPageValidator.cs" />
-    <Compile Include="Infrastructure\Validators\StartPageValidator.cs" />
-    <Compile Include="Interface\IComment.cs" />
+    <Compile Include="Helpers\HtmlHelpers.cs" />
+    <Compile Include="Initialization\ContentEventsModule.cs" />
+    <Compile Include="Initialization\DependencyResolverInitialization.cs" />
+    <Compile Include="Interfaces\ICacheManager.cs" />
+    <Compile Include="Interfaces\ISiteService.cs" />
+    <Compile Include="Interfaces\ISiteValidationService.cs" />
+    <Compile Include="Models\Pages\SearchPageType.cs" />
+    <Compile Include="Services\SiteValidationService.cs" />
+    <Compile Include="Validators\ContentPageValidator.cs" />
+    <Compile Include="Validators\StartPageValidator.cs" />
+    <Compile Include="Interfaces\IComment.cs" />
     <Compile Include="Models\Blocks\FeedsBlockType.cs" />
-    <Compile Include="Models\DDStoreRepository.cs" />
+    <Compile Include="Repositories\CommentRepository.cs" />
     <Compile Include="Models\Entities\Comment.cs" />
+    <Compile Include="Models\Entities\PageViewsData.cs" />
     <Compile Include="Models\Media\GenericMedia.cs" />
     <Compile Include="Models\Media\ImageFile.cs" />
     <Compile Include="Models\Media\VideoFile.cs" />

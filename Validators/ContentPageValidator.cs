@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 
-namespace EpiserverSite_CompanyIntranet.Infrastructure.Validators
+namespace EpiserverSite_CompanyIntranet.Validators
 {
     public class ContentPageValidator //: IValidate<StartPageType>
     {

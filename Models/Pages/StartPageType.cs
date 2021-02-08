@@ -2,6 +2,7 @@
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.SpecializedProperties;
+using EpiserverSite_CompanyIntranet.Business;
 using System;
 using System.ComponentModel.DataAnnotations;
 
@@ -65,5 +66,12 @@ namespace EpiserverSite_CompanyIntranet.Models.Pages
            GroupName = "Config",
            Order = 700)]
         public virtual PageReference PageReference { get; set; }
+
+        [Display(
+            Name = "Search Page",
+            Description = "",
+            GroupName = SiteTabNames.SiteOptions,
+            Order = 1000)]
+        public virtual PageReference SearchPage { get; set; }
     }
 }

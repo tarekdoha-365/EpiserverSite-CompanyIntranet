@@ -16,7 +16,7 @@ namespace EpiserverSite_CompanyIntranet.Business
 
         [Display(Order = 110)]
         [RequiredAccess(AccessLevel.Edit)]
-        public const string YourCustomTabName1 = "Your Custom Tab Name 1";
+        public const string SiteOptions = "SiteOptions";
 
         [Display(Order = 120)]
         [RequiredAccess(AccessLevel.Edit)]

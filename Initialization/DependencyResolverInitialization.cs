@@ -7,8 +7,9 @@ using StructureMap;
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace EpiserverSite_CompanyIntranet.Infrastructure.Initialization
+namespace EpiserverSite_CompanyIntranet.Initialization
 {
+    [InitializableModule]
     public class DependencyResolverInitialization : IConfigurableModule
     {
         public void ConfigureContainer(ServiceConfigurationContext context)
@@ -23,7 +24,7 @@ namespace EpiserverSite_CompanyIntranet.Infrastructure.Initialization
         {
             container.Scan(x =>
             {
-                x.Assembly("EpiserverSite-Demo");
+                x.Assembly("EpiserverSite-CompanyIntranet");
                 x.WithDefaultConventions();
                 x.LookForRegistries();
             });

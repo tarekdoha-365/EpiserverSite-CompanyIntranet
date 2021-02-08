@@ -1,4 +1,5 @@
 ﻿using EPiServer.Core;
+using EPiServer.Data;
 using EPiServer.Data.Dynamic;
 using EpiserverSite_CompanyIntranet.Models.Entities;
 using System;
@@ -9,11 +10,12 @@ using System.Threading.Tasks;
 
 namespace EpiserverSite_CompanyIntranet.Interface
 {
-    public interface IComments
+    public interface ICommentRepository
     {
         //DynamicDataStore GetStore();
-        void Save();
-        void Delete(Comment comment);
-        IEnumerable<Comment> GetComments();
+        Comment GetComment(Guid commentId);
+        Identity Save(Comment comment);
+        void Delete(Guid comment);
+        List<Comment> GetCommentList();
     }
 }

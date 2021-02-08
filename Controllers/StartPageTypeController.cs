@@ -1,5 +1,6 @@
 ﻿using EPiServer;
 using EPiServer.Core;
+using EPiServer.Data.Dynamic;
 using EPiServer.Framework.DataAnnotations;
 using EPiServer.Web.Mvc;
 using EpiserverSite_CompanyIntranet.Interface;
@@ -15,24 +16,19 @@ namespace EpiserverSite_CompanyIntranet.Controllers
 {
     public class StartPageTypeController : PageController<StartPageType>
     {
-        //private IComments _comments;
-
-        //public StartPageTypeController(IComments comments)
-        //{
-        //    _comments = comments;
-        //}
         public ActionResult Index(StartPageType currentPage)
         {
+            DynamicDataStore store = typeof(PageViewsData).GetOrCreateStore();
+            var viewData = new PageViewsData
+            {
+                PageId = currentPage.ContentLink.ID,
+                ViewsAmount = 1
+            };
+            store.Save(viewData);
+
             /* Implementation of action. You can create your own view model class that you pass to the view or
              * you can pass the page type for simpler templates */
             return View(currentPage);
         }
-        //public ViewResult Details()
-        //{
-       
-        //    StartDetailsComment detailsComment = new StartDetailsComment();
-        //    var comm = _comments.GetComments();
-        //    return View(comm);
-        //}
     }
 }

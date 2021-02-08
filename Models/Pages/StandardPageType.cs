@@ -10,14 +10,6 @@ namespace EpiserverSite_CompanyIntranet.Models.Pages
     [ContentType(DisplayName = "StandardPageType", GUID = "72882700-7fea-48f5-9855-dfb4a4ffe767", Description = "")]
     public class StandardPageType : SitePageData
     {
-        /*
-                [CultureSpecific]
-                [Display(
-                    Name = "Main body",
-                    Description = "The main body will be shown in the main content area of the page, using the XHTML-editor you can insert for example text, images and tables.",
-                    GroupName = SystemTabNames.Content,
-                    Order = 1)]
-                public virtual XhtmlString MainBody { get; set; }
-         */
+      
     }
 }
