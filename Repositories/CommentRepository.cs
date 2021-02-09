@@ -2,7 +2,7 @@
 using EPiServer.Data;
 using EPiServer.Data.Dynamic;
 using EpiserverSite_CompanyIntranet.Interface;
-using EpiserverSite_CompanyIntranet.Models.Entities;
+using EpiserverSite_CompanyIntranet.EntitiesDTO;
 using EpiserverSite_CompanyIntranet.Models.Pages;
 using System;
 using System.Collections.Generic;

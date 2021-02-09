@@ -5,7 +5,7 @@ using EPiServer.Framework.DataAnnotations;
 using EPiServer.Web.Mvc;
 using EpiserverSite_CompanyIntranet.Interface;
 using EpiserverSite_CompanyIntranet.Models;
-using EpiserverSite_CompanyIntranet.Models.Entities;
+using EpiserverSite_CompanyIntranet.EntitiesDTO;
 using EpiserverSite_CompanyIntranet.Models.Pages;
 using EpiserverSite_CompanyIntranet.ViewModel;
 using System.Collections.Generic;
