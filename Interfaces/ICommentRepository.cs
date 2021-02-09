@@ -13,7 +13,7 @@ namespace EpiserverSite_CompanyIntranet.Interfaces
     public interface ICommentRepository
     {
         Comment GetComment(Guid commentId);
-        Identity Save(Comment comment);
+        Identity Update(Comment comment)
         void Delete(Guid comment);
         List<Comment> GetCommentList();
     }

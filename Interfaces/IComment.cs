@@ -1,21 +1,22 @@
 ﻿using EPiServer.Core;
 using EPiServer.Data;
 using EPiServer.Data.Dynamic;
-using EpiserverSite_CompanyIntranet.Models.Entities;
+using EpiserverSite_CompanyIntranet.EntitiesDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EpiserverSite_CompanyIntranet.Interface
+namespace EpiserverSite_CompanyIntranet.Interfaces
 {
     public interface ICommentRepository
     {
         //DynamicDataStore GetStore();
-        Comment GetComment(Guid commentId);
-        Identity Save(Comment comment);
+        Comment Get(Guid commentId);
+        Identity Add(Comment comment);
+        Identity Update(Comment comment);
         void Delete(Guid comment);
-        List<Comment> GetCommentList();
+        List<Comment> GetAll();
     }
 }

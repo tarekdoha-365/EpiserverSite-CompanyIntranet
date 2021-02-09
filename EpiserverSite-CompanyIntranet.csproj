@@ -273,7 +273,7 @@
     <Compile Include="Interfaces\IComment.cs" />
     <Compile Include="Models\Blocks\FeedsBlockType.cs" />
     <Compile Include="Repositories\CommentRepository.cs" />
-    <Compile Include="Models\Entities\Comment.cs" />
+    <Compile Include="EntitiesDTO\Comment.cs" />
     <Compile Include="Models\Media\GenericMedia.cs" />
     <Compile Include="Models\Media\ImageFile.cs" />
     <Compile Include="Models\Media\VideoFile.cs" />
