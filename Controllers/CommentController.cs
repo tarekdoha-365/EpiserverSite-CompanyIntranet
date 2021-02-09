@@ -1,5 +1,4 @@
-﻿using EpiserverSite_CompanyIntranet.Interface;
-using EpiserverSite_CompanyIntranet.Interfaces;
+﻿using EpiserverSite_CompanyIntranet.Interfaces;
 using System;
 using System.Web.Http;
 using EpiserverSite_CompanyIntranet.EntitiesDTO;
@@ -17,28 +16,40 @@ namespace EpiserverSite_CompanyIntranet.Controllers
         {
             _commentRepository = commentRepository;
         }
-        [Route("GetComment/{commentId}")]
-        public Comment GetComment(Guid commentId)
+
+        [Route("Get/{commentId}")]
+        [HttpGet]
+        public Comment Get(Guid commentId)
         {
-            return _commentRepository.GetComment(commentId);
+            return _commentRepository.Get(commentId);
         }
 
-        [Route("SaveComment")]
-        public Identity SaveComment(Comment comment)
+        [Route("Add")]
+        [HttpPost]
+        public Identity Add(Comment comment)
         {
-            return _commentRepository.Save(comment);
+            return _commentRepository.Add(comment);
         }
 
-        [Route("DeleteComment/{commentId}")]
+        [Route("Update")]
+        [HttpPut]
+        public Identity Update(Comment comment)
+        {
+            return _commentRepository.Update(comment);
+        }
+
+        [Route("Delete/{commentId}")]
+        [HttpDelete]
         public void DeleteComment(Guid commentId)
         {
             _commentRepository.Delete(commentId);
         }
 
-        [Route("GetCommentList")]
-        public List<Comment> GetCommentList()
+        [Route("GetAll")]
+        [HttpGet]
+        public List<Comment> GetAll()
         {
-            return _commentRepository.GetCommentList();
+            return _commentRepository.GetAll();
         }
     }
 }
