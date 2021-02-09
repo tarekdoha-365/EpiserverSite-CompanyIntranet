@@ -18,13 +18,13 @@ namespace EpiserverSite_CompanyIntranet.Controllers
     {
         public ActionResult Index(StartPageType currentPage)
         {
-            DynamicDataStore store = typeof(PageViewsData).GetOrCreateStore();
-            var viewData = new PageViewsData
-            {
-                PageId = currentPage.ContentLink.ID,
-                ViewsAmount = 1
-            };
-            store.Save(viewData);
+            //DynamicDataStore store = typeof(PageViewsData).GetOrCreateStore();
+            //var viewData = new PageViewsData
+            //{
+            //    PageId = currentPage.ContentLink.ID,
+            //    ViewsAmount = 1
+            //};
+            //store.Save(viewData);
 
             /* Implementation of action. You can create your own view model class that you pass to the view or
              * you can pass the page type for simpler templates */
