@@ -19,13 +19,10 @@ namespace EpiserverSite_CompanyIntranet.Controllers
     public class CommentController : ApiController
     {
         private readonly ICommentRepository _commentRepository;
-        private ICacheManager _cache;
 
-        public CommentController(ICommentRepository commentRepository,
-            ICacheManager cache)
+        public CommentController(ICommentRepository commentRepository)
         {
             _commentRepository = commentRepository;
-            _cache = cache;
         }
 
         [Route("Get/{commentId}")]

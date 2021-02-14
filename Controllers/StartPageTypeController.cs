@@ -7,7 +7,6 @@ namespace EpiserverSite_CompanyIntranet.Controllers
 {
     public class StartPageTypeController : PageController<StartPageType>
     {
-        [ContentOutputCache]
         public ActionResult Index(StartPageType currentPage)
         {
             /* Implementation of action. You can create your own view model class that you pass to the view or
