@@ -1,0 +1,11 @@
+﻿@model  List<EpiserverSite_CompanyIntranet.Entities.MenuItem>
+
+<ul>
+    @foreach (var item in @Model)
+    {
+    <li>
+        <a href="@item.Url">@item.Title</a>
+        @{Html.RenderPartial("TopMenu", item.MenuItemList);}
+    </li>
+    }
+</ul>

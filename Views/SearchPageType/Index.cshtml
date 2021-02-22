@@ -1,6 +1,10 @@
-﻿@model  EpiserverSite_CompanyIntranet.Models.Pages.SearchPageType
+﻿@model EpiserverSite_CompanyIntranet.ViewModels.SearchPageViewModel
 
+
+<nav>
+    @{Html.RenderPartial("TopMenu", Model.TopMenu);}
+</nav>
 
 <p>
-    @Html.PropertyFor(x => x.MainBody)
+    @Html.PropertyFor(x => x.CurrentPage.MainBody)
 </p>

@@ -10,6 +10,7 @@ using System.Runtime.Caching;
 using System.Web;
 using EPiServer;
 using Microsoft.Extensions.Caching.Memory;
+using EPiServer.Logging.Compatibility;
 
 namespace EpiserverSite_CompanyIntranet.Controllers
 {
@@ -19,6 +20,7 @@ namespace EpiserverSite_CompanyIntranet.Controllers
     public class CommentController : ApiController
     {
         private readonly ICommentRepository _commentRepository;
+        private readonly ILog Logger = LogManager.GetLogger("CustomLogAppender");
 
         public CommentController(ICommentRepository commentRepository)
         {
@@ -57,7 +59,7 @@ namespace EpiserverSite_CompanyIntranet.Controllers
         [HttpGet]
         public List<Comment> GetAll()
         {
-            
+            Logger.Info("Log In New Text File");
             List<Comment> comments = new List<Comment>();
             var cache = MemoryCache.Default;
            comments = (List<Comment>) cache.Get("comments");

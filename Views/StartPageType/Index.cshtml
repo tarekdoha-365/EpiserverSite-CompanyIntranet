@@ -1,49 +1,12 @@
-﻿@using EPiServer.Core
-@using EPiServer.Web
-@using EPiServer.Editor
-@using EPiServer.Web.Mvc.Html
-@model EpiserverSite_CompanyIntranet.Models.Pages.StartPageType
-@using EpiserverSite_CompanyIntranet.Helpers
-@helper MenuItemTemplate(HtmlHelpers.MenuItem item)
-{
-    <li>
-        @Html.PageLink(item.Page)
-        @if (item.HasChildren.Value)
-        {
-            <ul>
-                @Html.MenuList(item.Page.ContentLink, MenuItemTemplate)
-            </ul>
-        }
-    </li>
-}
-<nav>
+﻿@model EpiserverSite_CompanyIntranet.Models.Pages.StartPageType
 
-    <ul>
-        <li><a href="http://localhost:60918">Start Page</a></li>
-        @Html.MenuList(SiteDefinition.Current.StartPage, MenuItemTemplate)
-    </ul>
-</nav>
 
-<div class="row page-header">
-    <div class="col-md-12">
-        <h2>@Html.PropertyFor(x => x.Title)</h2>
-        <p>@Html.PropertyFor(x => x.Name)</p>
-        <p>@Html.PropertyFor(x => x.MainBody)</p>
-        <p>@Html.PropertyFor(x => x.LinkList)</p>
+<p>
+    @Html.PropertyFor(x => x.Heading)
+</p>
 
-    </div>
-</div>
 
-@if (Model.ContentArea != null || PageEditing.PageIsInEditMode)
-{
-    <!-- block content goes here -->
-    @Html.PropertyFor(x => x.ContentArea)
-}
-
-@*@model EpiserverSite_CompanyIntranet.Models.Entities.Comment*@
-<div class="commentform">
-    <h1>Leave Comments:</h1>
-    <textarea id="textarea"></textarea>
-    <button id="button">Submit</button>
-</div>
+<p>
+    @Html.PropertyFor(x => x.LeftMenu)
+</p>
 
