@@ -1,4 +1,4 @@
-﻿using EpiserverSite_CompanyIntranet.Entities;
+﻿using EpiserverSite_CompanyIntranet.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;

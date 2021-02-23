@@ -3,6 +3,7 @@ using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.SpecializedProperties;
 using EpiserverSite_CompanyIntranet.Business;
+using EpiserverSite_CompanyIntranet.Models.Pages.Base;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Web;
@@ -13,11 +14,12 @@ namespace EpiserverSite_CompanyIntranet.Models.Pages
     public class StartPageType : SitePageData
     {
         [Display(
-            Name = "Search Page",
-            Description = "",
-            GroupName = SiteTabNames.SiteOptions,
-            Order = 1000)]
-        public virtual PageReference SearchPage { get; set; }
+                    Name = "Global Settings Page Reference",
+                    Description = "Reference to the Global Settings Page",
+                    GroupName = SiteTabNames.SiteOptions,
+                    Order = 10)]
+        [AllowedTypes(new[] { typeof(GlobalSettingsPageType) })]
+        public virtual PageReference GlobalSettingsPageReference { get; set; }
 
     }
 }

@@ -1,7 +1,7 @@
 ﻿using EPiServer;
 using EPiServer.Core;
 using EPiServer.Filters;
-using EpiserverSite_CompanyIntranet.Entities;
+using EpiserverSite_CompanyIntranet.Entity;
 using EpiserverSite_CompanyIntranet.Interfaces;
 using EpiserverSite_CompanyIntranet.Models.Pages;
 using System;
