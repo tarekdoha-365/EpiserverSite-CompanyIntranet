@@ -1,13 +1,13 @@
-﻿using  EpiserverSite_CompanyIntranet.Interfaces;
-using EPiServer;
+﻿using EPiServer;
 using EPiServer.Core;
+using EPiServer.DataAccess;
 using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
 using EPiServer.Logging;
-using EPiServer.ServiceLocation;
-using EpiserverSite_CompanyIntranet.Models.Pages;
-using EPiServer.DataAccess;
 using EPiServer.Security;
+using EPiServer.ServiceLocation;
+using EpiserverSite_CompanyIntranet.Interfaces;
+using EpiserverSite_CompanyIntranet.Models.Pages;
 using System.Linq;
 
 namespace EpiserverSite_CompanyIntranet.Initialization
@@ -93,13 +93,35 @@ namespace EpiserverSite_CompanyIntranet.Initialization
                     _contentRepository.Move(newsPage.ContentLink.ToPageReference(), monthPage, AccessLevel.NoAccess, AccessLevel.NoAccess);
                 }
             }
+            var eventPage = e.Content as EventPageType;
+            if (eventPage != null)
+            {
+                var eventPageCreated = eventPage.Created;
+                var startPage = _contentRepository.Get<StartPageType>(ContentReference.StartPage);
+                if (startPage.GlobalSettingsPageReference == null)
+                {
+                    throw new EPiServerCancelException("Global Settings Page not set in Start page");
+                }
+                var globalSettingsPage = _contentRepository.Get<GlobalSettingsPageType>(startPage.GlobalSettingsPageReference);
+                var eventsContainerPage = globalSettingsPage.EventsPageContainerReference;
+                if (eventsContainerPage == null)
+                {
+                    throw new EPiServerCancelException("Events Container Page not set in Global Settings Page");
+                }
+                var yearPage = CreateYearContainer(eventPageCreated.Year.ToString(), eventsContainerPage);
+                var monthPage = CreateMonthContainer(eventPageCreated.ToString("MM"), yearPage);
+                if (eventPage.ParentLink != monthPage)
+                {
+                    _contentRepository.Move(eventPage.ContentLink.ToPageReference(), monthPage, AccessLevel.NoAccess, AccessLevel.NoAccess);
+                }
+            }
         }
         PageReference CreateYearContainer(string pageName, PageReference parent)
         {
             var existingContainerPage = GetContainerPageByName(pageName, parent);
             if (existingContainerPage == null)
             {
-                var parentContentReference = _contentRepository.Get<NewsContainerPageType>(parent);
+                var parentContentReference = _contentRepository.Get<PageData>(parent);
                 var containerPage = _contentRepository.GetDefault<ContainerPageType>(parentContentReference.ContentLink);
                 containerPage.Name = pageName;
                 _contentRepository.Save(containerPage, SaveAction.Publish, AccessLevel.NoAccess);

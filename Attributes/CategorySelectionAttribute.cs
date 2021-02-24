@@ -7,6 +7,7 @@ using System.Web;
 
 namespace EpiserverSite_CompanyIntranet.Attributes
 {
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
     public class CategorySelectionAttribute:Attribute
     {
         /// 

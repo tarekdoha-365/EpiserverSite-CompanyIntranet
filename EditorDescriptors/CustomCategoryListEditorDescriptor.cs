@@ -3,6 +3,7 @@ using EPiServer.Core;
 using EPiServer.Shell.ObjectEditing;
 using EPiServer.Shell.ObjectEditing.EditorDescriptors;
 using EpiserverSite_CompanyIntranet.Attributes;
+using EpiserverSite_CompanyIntranet.Constants;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ using System.Reflection;
 
 namespace EpiserverSite_CompanyIntranet.EditorDescriptors
 {
+    [EditorDescriptorRegistration(TargetType = typeof(CategoryList), UIHint = SiteUIHint.CustomCategories, EditorDescriptorBehavior = EditorDescriptorBehavior.ExtendBase)]
     public class CustomCategoryListEditorDescriptor : EditorDescriptor
     {
         public override void ModifyMetadata(
