@@ -8,13 +8,16 @@ using EpiserverSite_CompanyIntranet.Enums;
 using EPiServer.Web;
 using EpiserverSite_CompanyIntranet.Attributes;
 using EpiserverSite_CompanyIntranet.Models.Blocks;
+using EpiserverSite_CompanyIntranet.Models.Pages.Base;
+using EpiserverSite_CompanyIntranet.Entity;
+using EPiServer.Web.Routing;
 
 namespace EpiserverSite_CompanyIntranet.Models.Pages
 {
     [ContentIcon(ContentIcon.Page, ContentIconColor.Active)]
     [AvailableContentTypes(Availability.None)]
     [ContentType(DisplayName = "NewsPageType", GUID = "165b0b6d-b1f5-4eb4-9003-950b73e02f52", Description = "")]
-    public class NewsPageType : PageData
+    public class NewsPageType : SearchablePageType
     {
         [Display(
             Name = "Filter Tags",
@@ -55,5 +58,19 @@ namespace EpiserverSite_CompanyIntranet.Models.Pages
             GroupName = SystemTabNames.Content,
             Order = 50)]
         public virtual XhtmlString FullArticle { get; set; }
+        internal News GetSerializableNews()
+        {
+            return new News()
+            {
+                ArticleTitle = ArticleTitle,
+                ArticleSummary = ArticleSummary,
+                FullArticle = FullArticle?.ToHtmlString(),
+                ArticleImage = ArticleImage != null ? UrlResolver.Current.GetUrl(ArticleImage) : "",
+                Created = Created.ToString("yyyy-MM-ddTHH:mm:ss"),
+                Modified = Saved.ToString("yyyy-MM-ddTHH:mm:ss"),
+                CreatedBy = CreatedBy,
+                ModifiedBy = ChangedBy
+            };
+        }
     }
 }

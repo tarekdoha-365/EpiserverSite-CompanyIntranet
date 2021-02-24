@@ -19,7 +19,7 @@ namespace EpiserverSite_CompanyIntranet
             {
                 config.MapHttpAttributeRoutes();
                 config.Routes.MapHttpRoute(
-                    name: "defaultapi",
+                    name: "API",
                     routeTemplate: "api/{controller}/{id}",
                     defaults: new { id = RouteParameter.Optional }
                 );
