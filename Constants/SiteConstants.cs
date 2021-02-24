@@ -10,5 +10,6 @@ namespace EpiserverSite_CompanyIntranet.Constants
         public const string Countries = "Countries";
         public const string Departments = "Departments";
         public const string EmployeeLevels = "EmployeeLevels";
+        public const string Events = "Events";
     }
 }

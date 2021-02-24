@@ -96,6 +96,27 @@
     <Reference Include="EPiServer.Events, Version=11.20.3.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
       <HintPath>packages\EPiServer.Framework.11.20.3\lib\net461\EPiServer.Events.dll</HintPath>
     </Reference>
+    <Reference Include="EPiServer.Find, Version=13.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>packages\EPiServer.Find.13.4.0\lib\net461\EPiServer.Find.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Find.Blocks, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>packages\EPiServer.Find.Cms.13.4.0\lib\net461\EPiServer.Find.Blocks.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Find.Cms, Version=13.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>packages\EPiServer.Find.Cms.13.4.0\lib\net461\EPiServer.Find.Cms.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Find.Framework, Version=13.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>packages\EPiServer.Find.Framework.13.4.0\lib\net461\EPiServer.Find.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Find.Optimizations, Version=13.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>packages\EPiServer.Find.Cms.13.4.0\lib\net461\EPiServer.Find.Optimizations.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Find.Statistics, Version=13.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>packages\EPiServer.Find.Cms.13.4.0\lib\net461\EPiServer.Find.Statistics.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Find.UI, Version=13.4.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>packages\EPiServer.Find.Cms.13.4.0\lib\net461\EPiServer.Find.UI.dll</HintPath>
+    </Reference>
     <Reference Include="EPiServer.Framework, Version=11.20.3.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
       <HintPath>packages\EPiServer.Framework.11.20.3\lib\net461\EPiServer.Framework.dll</HintPath>
     </Reference>
@@ -256,7 +277,7 @@
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
@@ -264,24 +285,24 @@
     <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Providers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -313,11 +334,15 @@
     <Compile Include="Constants\SiteConstants.cs" />
     <Compile Include="Constants\SiteUIHint.cs" />
     <Compile Include="Controllers\AboutUsPageController.cs" />
+    <Compile Include="Controllers\API\NewsAPIController.cs" />
     <Compile Include="Controllers\ContactPageTypeController.cs" />
     <Compile Include="Controllers\SearchPageTypeController.cs" />
     <Compile Include="Controllers\StartPageTypeController.cs" />
     <Compile Include="Controllers\API\CommentController.cs" />
+    <Compile Include="EditorDescriptors\CustomCategoryListEditorDescriptor.cs" />
+    <Compile Include="EditorDescriptors\HideCategoryEditorDescriptor.cs" />
     <Compile Include="Entity\MenuItem.cs" />
+    <Compile Include="Entity\News.cs" />
     <Compile Include="Enums\ContentIcon.cs" />
     <Compile Include="Enums\ContentIconColor.cs" />
     <Compile Include="Global.asax.cs">
@@ -326,8 +351,10 @@
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Initialization\ContentEventsModule.cs" />
     <Compile Include="Initialization\DependencyResolverInitialization.cs" />
+    <Compile Include="Initialization\RestrictRootPages.cs" />
     <Compile Include="Interfaces\ICacheManager.cs" />
     <Compile Include="Interfaces\IMenuService.cs" />
+    <Compile Include="Interfaces\INewsService.cs" />
     <Compile Include="Interfaces\ISiteService.cs" />
     <Compile Include="Interfaces\ISiteValidationService.cs" />
     <Compile Include="Models\Blocks\Base\SiteBlockData.cs" />
@@ -338,9 +365,11 @@
     <Compile Include="Models\Pages\GlobalSettingsPageType.cs" />
     <Compile Include="Models\Pages\NewsContainerPageType.cs" />
     <Compile Include="Models\Pages\NewsPageType.cs" />
+    <Compile Include="Models\Pages\Base\SearchablePageType.cs" />
     <Compile Include="Models\Pages\SearchPageType.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Services\MenuService.cs" />
+    <Compile Include="Services\NewsService.cs" />
     <Compile Include="Services\SiteValidationService.cs" />
     <Compile Include="Validators\ContentPageValidator.cs" />
     <Compile Include="Validators\StartPageValidator.cs" />
@@ -361,9 +390,11 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\Properties\" />
     <Folder Include="Static\" />
+    <Folder Include="Views\NewsAPI\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Icon\jumbotronblocktype.jpg" />
+    <Content Include="license.txt" />
     <Content Include="Views\Web.config" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
