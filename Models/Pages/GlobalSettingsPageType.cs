@@ -46,5 +46,13 @@ namespace EpiserverSite_CompanyIntranet.Models.Pages
             Order = 20)]
         [AllowedTypes(new[] { typeof(NewsContainerPageType) })]
         public virtual PageReference NewsPageContainerReference { get; set; }
+
+        [Display(
+            Name = "Events Page Container Reference",
+            Description = "Reference to the Events Page Container",
+            GroupName = SiteTabNames.SiteOptions,
+            Order = 20)]
+        [AllowedTypes(new[] { typeof(EventsContainerPageType) })]
+        public virtual PageReference EventsPageContainerReference { get; set; }
     }
 }

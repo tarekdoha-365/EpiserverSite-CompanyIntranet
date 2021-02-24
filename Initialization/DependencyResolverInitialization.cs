@@ -1,8 +1,7 @@
-﻿using EPiServer.Core;
+﻿using EpiserverSite_CompanyIntranet.Business;
 using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
 using EPiServer.ServiceLocation;
-using EpiserverSite_CompanyIntranet.Business;
 using StructureMap;
 using System.Web.Http;
 using System.Web.Mvc;
