@@ -1,15 +1,16 @@
-﻿using EPiServer.Core;
+﻿using EpiserverSite_CompanyIntranet.Attributes;
+using EpiserverSite_CompanyIntranet.Constants;
+using EpiserverSite_CompanyIntranet.Entity;
+using EpiserverSite_CompanyIntranet.Models.Blocks;
+using EpiserverSite_CompanyIntranet.Models.Pages.Base;
+using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
 using EPiServer.SpecializedProperties;
-using EpiserverSite_CompanyIntranet.Attributes;
-using EpiserverSite_CompanyIntranet.Constants;
-using EpiserverSite_CompanyIntranet.Entity;
-using EpiserverSite_CompanyIntranet.Enums;
-using EpiserverSite_CompanyIntranet.Models.Blocks;
-using EpiserverSite_CompanyIntranet.Models.Pages.Base;
 using System;
 using System.ComponentModel.DataAnnotations;
+using EpiserverSite_CompanyIntranet.Enums;
+
 
 namespace EpiserverSite_CompanyIntranet.Models.Pages
 {

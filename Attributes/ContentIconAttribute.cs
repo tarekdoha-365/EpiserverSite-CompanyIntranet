@@ -6,7 +6,7 @@ using System.Web;
 
 namespace EpiserverSite_CompanyIntranet.Attributes
 {
-    public class ContentIconAttribute: Attribute
+    public class ContentIconAttribute : Attribute
     {
         public ContentIcon Icon { get; set; }
         public ContentIconColor Color { get; set; }
