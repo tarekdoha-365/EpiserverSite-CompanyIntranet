@@ -9,34 +9,20 @@ using System.Globalization;
 using System.Linq;
 using EPiServer.Find.Cms;
 using System.Web;
+using EPiServer.Validation;
 
 namespace EpiserverSite_CompanyIntranet.Services
 {
-    public class EventsService : IEventsService
+    public class StartPageValidator : IValidate<StartPageType>
     {
-        private readonly IContentRepository _contentRepository;
-        private readonly IClient _client;
-        public EventsService(IContentRepository contentRepository, IClient client)
+        public readonly ISiteValidationService _siteValidationService;
+        public StartPageValidator(ISiteValidationService siteValidationService)
         {
-            _contentRepository = contentRepository;
-            _client = client;
+            _siteValidationService = siteValidationService;
         }
-        public Event Get(Guid pageId, string language)
+        public IEnumerable<ValidationError> Validate(StartPageType instance)
         {
-            var eventPage = _contentRepository.Get<EventPageType>(pageId, new CultureInfo(language));
-            return eventPage.GetSerializableNews();
-
-        }
-        public List<Event> GetAll(int offset, int limit, string language)
-        {
-            var eventPageList = _client.Search<EventPageType>()
-                .FilterForVisitor(language)
-                .OrderByDescending(x => x.Saved)
-                .Take(limit).Skip(offset)
-                .GetContentResult()
-                .Items?.ToList();
-
-            return eventPageList.Select(eventPage => eventPage.GetSerializableNews())?.ToList();
+            return _siteValidationService.ValidateStartPage(instance);
         }
     }
 }

@@ -1,16 +1,16 @@
-﻿using EPiServer.Core;
+﻿using EpiserverSite_CompanyIntranet.Attributes;
+using EpiserverSite_CompanyIntranet.Entity;
+using EpiserverSite_CompanyIntranet.Models.Blocks;
+using EpiserverSite_CompanyIntranet.Models.Pages.Base;
+using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
-using EPiServer.SpecializedProperties;
+using EPiServer.Web;
+using EPiServer.Web.Routing;
 using System;
 using System.ComponentModel.DataAnnotations;
 using EpiserverSite_CompanyIntranet.Enums;
-using EPiServer.Web;
-using EpiserverSite_CompanyIntranet.Attributes;
-using EpiserverSite_CompanyIntranet.Models.Blocks;
-using EpiserverSite_CompanyIntranet.Models.Pages.Base;
-using EpiserverSite_CompanyIntranet.Entity;
-using EPiServer.Web.Routing;
+
 
 namespace EpiserverSite_CompanyIntranet.Models.Pages
 {
@@ -20,10 +20,10 @@ namespace EpiserverSite_CompanyIntranet.Models.Pages
     public class NewsPageType : SearchablePageType
     {
         [Display(
-            Name = "Filter Tags",
-            Description = "Select tags to make this article filterd by it",
-            GroupName = SystemTabNames.Content,
-            Order = 10)]
+           Name = "Filter Tags",
+           Description = "Select tags to make this article filterd by it",
+           GroupName = SystemTabNames.Content,
+           Order = 10)]
         public virtual CategoryListBlockType FilterTags { get; set; }
 
         [CultureSpecific]
@@ -58,10 +58,12 @@ namespace EpiserverSite_CompanyIntranet.Models.Pages
             GroupName = SystemTabNames.Content,
             Order = 50)]
         public virtual XhtmlString FullArticle { get; set; }
+
         internal News GetSerializableNews()
         {
             return new News()
             {
+                Guid = ContentGuid,
                 ArticleTitle = ArticleTitle,
                 ArticleSummary = ArticleSummary,
                 FullArticle = FullArticle?.ToHtmlString(),

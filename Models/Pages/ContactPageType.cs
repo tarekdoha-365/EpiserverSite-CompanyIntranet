@@ -1,12 +1,11 @@
-﻿using EPiServer.Core;
-using EPiServer.DataAbstraction;
-using EPiServer.DataAnnotations;
-using EPiServer.SpecializedProperties;
-using EpiserverSite_CompanyIntranet.Attributes;
+﻿using EpiserverSite_CompanyIntranet.Attributes;
 using EpiserverSite_CompanyIntranet.Business;
 using EpiserverSite_CompanyIntranet.Enums;
 using EpiserverSite_CompanyIntranet.Models.Pages.Base;
-using System;
+using EPiServer.Core;
+using EPiServer.DataAbstraction;
+using EPiServer.DataAnnotations;
+using EPiServer.SpecializedProperties;
 using System.ComponentModel.DataAnnotations;
 
 namespace EpiserverSite_CompanyIntranet.Models.Pages

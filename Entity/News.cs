@@ -7,6 +7,7 @@ namespace EpiserverSite_CompanyIntranet.Entity
 {
     public class News
     {
+        public Guid Guid { get; set; }
         public string Created { get; set; }
         public string CreatedBy { get; set; }
         public string Modified { get; set; }

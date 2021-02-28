@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Reflection;
 
 namespace EpiserverSite_CompanyIntranet.Initialization
 {
@@ -63,6 +64,7 @@ namespace EpiserverSite_CompanyIntranet.Initialization
 
             foreach (var assembly in validAssemblies)
             {
+
                 typesWithAttribute.AddRange(assembly.GetTypes().Where(type => type.IsDefined(typeof(ContentIconAttribute), false)));
             }
 
