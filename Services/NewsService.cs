@@ -23,6 +23,18 @@ namespace EpiserverSite_CompanyIntranet.Services
             _contentRepository = contentRepository;
             _client = client;
         }
+
+        public void Delete()
+        {
+            var pagesToDelete = _client.Search<NewsPageType>()
+                 .Filter(x => x.StartPublish.MatchMonth(2021, 02))
+                   .GetContentResult();
+            foreach(var newsPage in pagesToDelete)
+            {
+                _contentRepository.Delete(newsPage.ContentLink, true, EPiServer.Security.AccessLevel.Administer);
+            }
+        }
+
         public News Get(Guid pageId, string language)
         {
             var newsPage = _contentRepository.Get<NewsPageType>(pageId, new CultureInfo(language));

@@ -20,6 +20,13 @@ namespace EpiserverSite_CompanyIntranet.Models.Pages
     public class NewsPageType : SearchablePageType
     {
         [Display(
+           Name = "Date and Time",
+           Description = "Select DateTime",
+           GroupName = SystemTabNames.Content,
+           Order = 5)]
+        public virtual DateTime DateTime { get; set; }
+
+        [Display(
            Name = "Filter Tags",
            Description = "Select tags to make this article filterd by it",
            GroupName = SystemTabNames.Content,
