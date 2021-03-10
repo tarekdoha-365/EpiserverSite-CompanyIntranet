@@ -439,6 +439,8 @@
     <Compile Include="Models\Pages\Base\SearchablePageType.cs" />
     <Compile Include="Models\Pages\SearchPageType.cs" />
     <Compile Include="Models\UserModel.cs" />
+    <Compile Include="ScheduledJob\ContentImport.cs" />
+    <Compile Include="ScheduledJob\ScheduledJobDeleteOldPage.cs" />
     <Compile Include="Services\EventsService.cs" />
     <Compile Include="Services\MenuService.cs" />
     <Compile Include="Services\NewsService.cs" />

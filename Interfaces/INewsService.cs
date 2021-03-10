@@ -11,5 +11,7 @@ namespace EpiserverSite_CompanyIntranet.Interfaces
     {
         News Get(Guid pageId, string language);
         List<News> GetAll(int offset, int limit, string language);
+
+        void Delete();
     }
 }
